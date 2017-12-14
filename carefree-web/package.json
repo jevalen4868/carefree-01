@@ -1,0 +1,20 @@
+{
+  "name": "carefree-web",
+  "version": "1.0.0",
+  "description": "Carefree's Front End Web. Enabling users to connect with those in need.",
+  "main": "index.js",
+  "scripts": {
+    "test": "run:test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "carefree-web"
+  },
+  "keywords": [
+    "carefree",
+    "web",
+    "react"
+  ],
+  "author": "j01",
+  "license": "ISC"
+}

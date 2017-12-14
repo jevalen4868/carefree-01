@@ -1,0 +1,4 @@
+rootProject.name = 'carefree'
+include 'carefree-api'
+include 'carefree-web'
+

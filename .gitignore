@@ -1,0 +1,7 @@
+.gradle
+.idea
+build
+out
+carefree-api/build
+carefree-api/logs
+carefree-api/out

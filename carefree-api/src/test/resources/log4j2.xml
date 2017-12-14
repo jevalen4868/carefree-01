@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration monitorInterval="3600" strict="true">
+    <properties>
+        <property name="filename">logs/carefree.log</property>
+        <property name="defaultPatternLayout">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</property>
+    </properties>
+    <!-- Appenders -->
+    <appenders>
+        <appender type="console" name="Console" target="System.out">
+            <Patternlayout Pattern="${defaultPatternLayout}" />
+        </appender>
+        <appender type="RollingFile" name="RollingFile" fileName="${filename}" filePattern="logs/$${date:yyyy-MM-dd}/carefree-api-%d{yyyy-MM-dd}-%i.log.gz">
+            <patternLayout Pattern="${defaultPatternLayout}" />
+            <policies>
+                <timeBasedTriggeringPolicy />
+                <sizeBasedTriggeringPolicy size="10 MB"/>
+            </policies>
+        </appender>
+    </appenders>
+
+    <!-- Application Loggers -->
+    <loggers>
+        <!-- Any class in the api package will log at this level.-->
+        <logger name="org.sp.j01.carefree.api" level="info"/>
+        <!-- 3rdparty Loggers -->
+        <logger name="org.springframework.core" level="info"/>
+        <logger name="org.springframework.beans" level="info"/>
+        <logger name="org.springframework.context" level="info"/>
+        <logger name="org.springframework.web" level="info"/>
+        <!--To see all queries executed by spring, set to trace.-->
+        <logger name="org.springframework.jdbc.core" level="trace"/>
+        <!-- Root Logger -->
+        <root level="info">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFile"/>
+        </root>
+    </loggers>
+</configuration>
